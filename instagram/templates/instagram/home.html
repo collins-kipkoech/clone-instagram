@@ -8,7 +8,7 @@
 <body>
     <h1>welcome all</h1>
     {% for post in posts %}
-        {{post.image_name}}
+        <a href="{% url 'imageDetails' pk=post.pk %}">{{post.image_name}}</a>
         {{post.caption}}
         {{post.comments}}
     {% endfor %}

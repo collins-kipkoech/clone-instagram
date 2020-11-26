@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Image
 
 
@@ -12,7 +12,8 @@ def home_view(request):
     }
     return render(request,'instagram/home.html',context)
 
-def image_details(request):
+def image_details(request,pk):
+    instance = get_object_or_404(Image,pk=pk)
     context = {
         'title':'details',
     }
